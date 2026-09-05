@@ -18,11 +18,12 @@
 - **Theme:** "The Lord Will Provide" — Genesis 22:14
 - **Tagline:** Honoring Our Past · Celebrating Our Present · Embracing Our Future
 - **Anniversary span:** 1981 – 2026 (from the t-shirt back)
-- **Honoree:** Rev. Eugene L. Neville, Founding Pastor / Pastor Emeritus. Sunday evening is his
+- **Honoree:** Rev. Eugene L. Neville, Founding Pastor / Pastor Emeritus. Sunday afternoon is his
   official recognition as founding pastor.
 - **Special guest speaker:** **Rev. Lin Dawson** (spelling confirmed live on the call with
   Ms. Gwen: L-I-N D-A-W-S-O-N, and yes, he is a Reverend). He preaches Sunday morning *and*
-  Sunday evening — "coming back home to preach."
+  Sunday afternoon — "coming back home to preach." (The meeting said "evening"; the revised
+  flyer's 1:00 PM time makes it an afternoon service.)
 
 ### Weekend schedule
 
@@ -33,14 +34,18 @@
 | **Sat Oct 3**, 12:00 PM – 4:00 PM | **Family Fun Day** — picnic style. Games, music. Bring your own food, chairs and blankets. | Walker Park, 50 May Ave, Brockton MA 02301 (behind the Raymond School) |
 | **Sat Oct 3**, 4:00 PM | Volunteer cleanup, ~1 hour. Trash bags handed out to attendees; crew consolidates and dumps. | Walker Park |
 | **Sun Oct 4**, morning | Regular morning worship service. Rev. Lin Dawson preaching. | Church sanctuary |
-| **Sun Oct 4**, between services | Volunteer setup for the evening celebration | Church, downstairs auditorium |
-| **Sun Oct 4**, 4:00 PM | **45th Anniversary Celebration** — worship, reflection, recognition and thanksgiving, with a meal. Honorarium for Rev. Neville. | Church, downstairs auditorium, 24 Pleasant St, Brockton MA 02301 |
+| **Sun Oct 4**, before 1:00 PM | Volunteer setup for the celebration | Church, downstairs auditorium |
+| **Sun Oct 4**, 1:00 PM | **45th Anniversary Celebration** — worship, reflection, recognition and thanksgiving, with a meal. Honorarium for Rev. Neville. | Church, downstairs auditorium, 24 Pleasant St, Brockton MA 02301 |
 | **Sun Oct 4**, after | Volunteer close-out / breakdown | Church |
+
+> **Time changed after the meeting.** The Sunday celebration was 4:00 PM in the meeting and on
+> the original flyer. A revised flyer moved it to **1:00 PM**. The 1:00 PM time is what the
+> site now shows. See §12 for what this knocks over.
 
 **[NEEDS CONFIRMATION]** Friday night start time. Never stated.
 **[NEEDS CONFIRMATION]** Sunday morning service start time. Never stated.
-**[NEEDS CONFIRMATION]** Sunday evening close-out — the group explicitly said "we haven't
-figured that out yet."
+**[NEEDS CONFIRMATION]** Sunday close-out after the celebration — the group explicitly said
+"we haven't figured that out yet."
 **[NEEDS CONFIRMATION]** Walker Park entrance. Someone said "the entrance is at Oak Street,
 we'll figure that part out" and then decided attendees don't need that detail. The flyer says
 50 May Ave. Decide which address to publish so people aren't sent to the wrong gate.
@@ -81,7 +86,7 @@ whoever runs the music ministry.
 **Sunday — Anniversary Celebration only**
 
 **[NEEDS CONFIRMATION] — this price does not exist anywhere yet.** The meeting confirmed
-there *is* a cost for the Sunday 4:00 PM event and that it's one of three purchase choices,
+there *is* a cost for the Sunday 1:00 PM event and that it's one of three purchase choices,
 but the number was never said out loud and it is not printed on either flyer. The site
 currently shows it as "price to be announced." **This is the single biggest blocker to opening
 registration.** Do not let me guess at it by backing it out of the passport price.
@@ -172,7 +177,7 @@ Shifts identified:
 | Decorations & prep (ironing tablecloths, chair covers, downstairs labor) | Friday Oct 2, evening |
 | Park setup — games and equipment | Saturday Oct 3, 10:00 AM |
 | Park cleanup | Saturday Oct 3, 4:00 PM (~1 hour) |
-| Celebration setup — auditorium | Sunday Oct 4, between morning and evening |
+| Celebration setup — auditorium | Sunday Oct 4, before 1:00 PM |
 | Close-out / breakdown | Sunday Oct 4, after the celebration |
 
 One live sign-up already happened in the room: **Sarah volunteered for Friday night ironing**
@@ -215,7 +220,7 @@ a QR pointing at a URL you're going to change is a wasted print run.
 - **Sunday (tomorrow):** Shayna announces from the front. Key beats agreed:
   - The committee stage is over — the weekend is already planned. "Get your pockets ready."
   - Saturday Oct 3, picnic-style family reunion, noon, Walker Park.
-  - Sunday Oct 4, 4:00 PM, downstairs — Rev. Lin Dawson, honoring Rev. Neville as founding pastor.
+  - Sunday Oct 4, 1:00 PM, downstairs — Rev. Lin Dawson, honoring Rev. Neville as founding pastor.
   - **Deliberately do NOT read prices aloud.** Direct quote: *"I don't want to mention it
     tomorrow, because it'll get confusing, and people have questions, and we don't have time
     for that. The cost will be on the website."* Prices live on the site only.
@@ -260,3 +265,44 @@ These are real conflicts in the material I was given, not nitpicks:
 4. **"Family reunion" vs "Family Fun Day."** The announcement script says "picnic style family
    reunion"; the flyer says "Family Fun Day." Pick one name and use it everywhere, or people
    will think they're two different things.
+
+---
+
+## 12. Update: Sunday service moved to 1:00 PM
+
+A revised anniversary flyer moved the Sunday service from **4:00 PM to 1:00 PM**. The new flyer
+is in the repo and the site has been updated throughout. Recorded here because the meeting
+transcript and the first flyer both say 4:00, so anyone reading the older notes will be working
+from a stale time.
+
+**Changed on the site:** the flyer image, the Sunday schedule card, the celebration details, the
+"Sunday only" registration option, the ticket card copy, and the volunteer shift times.
+
+### What the earlier time change knocks over
+
+These are consequences of moving to 1:00 PM. None of them were discussed in the meeting, because
+the meeting happened when it was still a 4:00 PM service.
+
+1. **The Sunday setup window is now very tight.** The plan was for volunteers to turn the
+   auditorium around "between morning worship and the evening celebration." With the celebration
+   at 1:00 PM, morning worship may not even be finished long before it starts. **[NEEDS
+   CONFIRMATION]** — either setup moves to Saturday evening or very early Sunday morning, or
+   morning worship needs to end earlier. Somebody has to make this call; the site currently
+   says "Sunday, before 1:00 PM" and notes the window is tight.
+
+2. **"Evening" language is now wrong everywhere.** Rev. Dawson preaches morning and *afternoon*,
+   not morning and evening. Rev. Neville's recognition is a Sunday *afternoon* event. Updated on
+   the site — but check the slideshow, any printed programs, and the announcement script, which
+   still say evening.
+
+3. **Meal timing.** A 1:00 PM start means the meal is lunch, not dinner. Worth confirming with
+   whoever is handling food — quantities and menu for a 1:00 PM sitting are a different problem
+   from a 4:00 PM one.
+
+4. **The gap between Saturday and Sunday shrinks for the cleanup crew.** Saturday cleanup runs
+   from 4:00 PM at Walker Park; Sunday setup now has to be done before 1:00 PM. If it's the same
+   people doing both, that's a real load. Worth checking when assigning shifts.
+
+5. **The year is still missing from the anniversary flyer.** The revised flyer still reads
+   "SUNDAY, OCTOBER 4TH" with no year. Since the flyer was being edited anyway, this was a free
+   opportunity to add it and it wasn't taken. Worth fixing before a large print run.

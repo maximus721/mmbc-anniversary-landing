@@ -128,7 +128,7 @@
         rows: known(u.adult)
           ? row("Adults", u.adult) + (known(u.youth) ? row("Under 18", u.youth) : "")
           : '<li><span>Ticket price</span><span class="ticket-price ticket-price--tbd">To be announced</span></li>',
-        note: "The four o’clock celebration and meal downstairs, honoring Rev. Eugene L. Neville."
+        note: "The one o’clock celebration and meal downstairs, honoring Rev. Eugene L. Neville."
       },
       {
         title: "Weekend Passport",

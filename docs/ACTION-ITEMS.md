@@ -17,7 +17,8 @@ of these actually block that. Those are marked **BLOCKER**.
 | 1 | **BLOCKER — Lock the URL.** Either buy the domain or accept the temporary Vercel URL. Nothing else can be printed or scanned until this exists. | Web team | Domain candidates discussed: MMBC.com (likely taken), MMBCBrockton, MtMoriahBrockton. Vercel placeholder is the agreed fallback. |
 | 2 | **BLOCKER — Generate the QR code** once #1 is locked. | Web team | `python3 tools/make-qr.py "https://your-url"` in this repo. Produces print-ready SVG + PNG. |
 | 3 | Deploy the landing page in "save the date" mode — flyers, schedule, and an email-capture form live; registration marked "opens Tuesday." | Web team | The page already supports this; see README §"Launch modes." |
-| 4 | Confirm Ms. Gwen approved the corrected anniversary flyer. | Shayna | It was sent to her mid-meeting and approval hadn't come back yet. |
+| 4 | Confirm Ms. Gwen approved the anniversary flyer — now the **1:00 PM** version. | Shayna | Time changed from 4:00 PM after the meeting. The revised flyer is in the repo and live on the site. |
+| 4a | **Re-check anything already printed or built with the old 4:00 PM time** — the slideshow, any posted flyers, the announcement script. | Shayna | The site is updated; offline material is not. |
 | 5 | Give the announcement from the front. Save-the-date only — **no prices read aloud.** | Shayna | Script beats are in MEETING-NOTES §9. |
 | 6 | Post flyers around the church. | [unassigned] | Near the pastor's office was mentioned. |
 | 7 | Staff the Alexander Room for cash/check sales; log every transaction on the spreadsheet. | Ms. Gwen + [unassigned] | Must be reconciled against online registrations later. |
@@ -52,8 +53,11 @@ of these actually block that. Those are marked **BLOCKER**.
 | 22 | Confirm Friday night start time and Sunday morning service time. | [unassigned] | Both missing from every document. |
 | 23 | Settle the Walker Park entrance question — May Ave vs. Oak Street — and publish one answer. | [unassigned] | |
 | 24 | Pick one name: "Family Fun Day" or "Family Reunion." Use it everywhere. | Shayna | Currently both are in circulation. |
-| 25 | Add the year to the anniversary flyer before any large print run. | Shayna | It currently reads "SUNDAY, OCTOBER 4TH" with no year. |
-| 26 | Plan the Sunday evening close-out crew. | [unassigned] | Explicitly deferred in the meeting. |
+| 25 | Add the year to the anniversary flyer before any large print run. | Shayna | Still reads "SUNDAY, OCTOBER 4TH" with no year, even after the 1:00 PM revision. |
+| 26 | Plan the Sunday close-out crew (after the 1:00 PM celebration). | [unassigned] | Explicitly deferred in the meeting. |
+| 26a | **Resolve the Sunday setup window.** With the celebration at 1:00 PM there may be little or no gap after morning worship to turn the auditorium around. Move setup to Saturday evening / early Sunday, or end morning worship earlier. | Anniversary committee | Consequence of the time change — never discussed, because the meeting predates it. See MEETING-NOTES §12. |
+| 26b | Confirm the meal plan suits a **1:00 PM sitting** (lunch, not dinner). | [unassigned] | Quantities and menu differ from a 4:00 PM event. |
+| 26c | Check the Saturday-cleanup and Sunday-setup crews aren't the same exhausted people. | [unassigned] | Saturday cleanup starts 4:00 PM; Sunday setup must finish before 1:00 PM. |
 | 27 | Define what each volunteer shift actually does, in one line each, so people know what they're signing up for. | [unassigned] | Raised in the meeting: *"You also need to explain what these hands, bodies are doing in terms of function."* |
 | 28 | Set up the reconciliation process between cash/check sales and online registrations. | Ms. Gwen + web team | Two ledgers with no reconciliation plan is how people get double-charged. |
 
