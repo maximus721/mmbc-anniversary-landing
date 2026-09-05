@@ -54,20 +54,26 @@ window.MMBC_CONFIG = {
      null = "To be announced" on the site. Numbers are whole dollars.
      ------------------------------------------------------------------- */
   pricing: {
+    // Saturday Picnic — Family Fun Day at Walker Park
     saturday: {
-      adult:  20,     // from the Family Fun Day flyer
+      adult:  20,
       youth:  10,     // ages 13-18
       child:  0       // under 12 — free
     },
+    // Sunday Meal — the 1:00 PM Anniversary Celebration
+    // The flyer gives two tiers only: "Adults $65, children $35". The age
+    // boundary for "children" was never stated, so both the 13-18 and the
+    // under-12 tiers are set to $35 here. Change if a cutoff is decided.
     sunday: {
-      adult:  null,   // ***NOT SET*** — this price does not exist yet
-      youth:  null,
-      child:  null
+      adult:  65,
+      youth:  35,
+      child:  35
     },
+    // Weekend Passport — both days
     passport: {
-      adult:  65,     // from the Family Fun Day flyer
+      adult:  65,
       youth:  40,     // under 18
-      child:  null
+      child:  40
     }
   },
 
@@ -75,13 +81,13 @@ window.MMBC_CONFIG = {
      6. T-SHIRT
      ------------------------------------------------------------------- */
   shirt: {
-    price: null,              // ***NOT SET***
-    bigAndTallUpcharge: null, // ***NOT SET*** — meeting floated $2 on
-                              // 3XL/4XL but did not decide. Set to 0 if
-                              // you decide not to charge extra.
+    price: null,              // ***STILL NOT SET*** — the only price the
+                              // committee hasn't given us. Everything else
+                              // is confirmed.
+    bigAndTallUpcharge: 0,    // CONFIRMED: no cost difference by size
     sizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
-    bigAndTallSizes: ["3XL", "4XL"],
-    orderDeadline: null       // e.g. "September 18, 2026"
+    bigAndTallSizes: [],
+    orderDeadline: null       // CONFIRMED: no deadline needed
   },
 
   /* -------------------------------------------------------------------

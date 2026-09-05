@@ -95,7 +95,7 @@
   if (sundayPrices) {
     var sun = PRICING.sunday || {};
     if (known(sun.adult)) {
-      sundayPrices.innerHTML = chip("Adults", sun.adult) + (known(sun.youth) ? chip("Under 18", sun.youth) : "");
+      sundayPrices.innerHTML = chip("Adults", sun.adult) + (known(sun.youth) ? chip("Children", sun.youth) : "");
     } else {
       sundayPrices.innerHTML =
         '<span class="price-chip price-chip--tbd"><b>Ticket price to be announced</b></span>';
@@ -126,7 +126,7 @@
         title: "Sunday Only",
         when: "Anniversary Celebration · Oct 4",
         rows: known(u.adult)
-          ? row("Adults", u.adult) + (known(u.youth) ? row("Under 18", u.youth) : "")
+          ? row("Adults", u.adult) + (known(u.youth) ? row("Children", u.youth) : "")
           : '<li><span>Ticket price</span><span class="ticket-price ticket-price--tbd">To be announced</span></li>',
         note: "The one o’clock celebration and meal downstairs, honoring Rev. Eugene L. Neville."
       },
@@ -226,7 +226,9 @@
       link.addEventListener("click", function (e) {
         e.preventDefault();
         var img = link.querySelector("img");
-        openLightbox(link.getAttribute("href"), img ? img.alt : "");
+        // Text links (no thumbnail) carry their description in data-alt.
+        var alt = img ? img.alt : (link.getAttribute("data-alt") || link.getAttribute("aria-label") || "");
+        openLightbox(link.getAttribute("href"), alt);
       });
     });
     lightboxClose.addEventListener("click", closeLightbox);
@@ -269,6 +271,30 @@
 
     var fine = $("#formFineprint");
     if (fine) fine.textContent = "No payment now. We’ll email you when registration opens.";
+
+    // If there is nowhere to send a submission yet, do NOT show a form that
+    // will error when somebody uses it. Say plainly that registration opens
+    // later. The form comes back the moment formEndpoint is configured.
+    if (!CFG.formEndpoint && !CFG.googleFormUrl && form) {
+      form.hidden = true;
+
+      var panel = document.createElement("div");
+      panel.className = "reg-pending";
+      panel.innerHTML =
+        '<p class="reg-pending-badge">Opens ' + (CFG.registrationOpensLabel || "soon") + "</p>" +
+        "<h3>Registration isn’t open yet</h3>" +
+        "<p>Ticket prices for the whole weekend are listed above so you can plan. " +
+        "Come back on <strong>" + (CFG.registrationOpensLabel || "opening day") +
+        "</strong> to register and pay." +
+        (CFG.contactEmail
+          ? ' In the meantime you can reach the committee at <a href="mailto:' +
+            CFG.contactEmail + '">' + CFG.contactEmail + "</a>."
+          : " In the meantime, speak to any member of the anniversary committee.") +
+        "</p>" +
+        '<a class="btn btn-maroon" href="#tickets">Review ticket prices</a>';
+
+      form.parentNode.insertBefore(panel, form);
+    }
   }
 
   /* ==================================================================
@@ -387,16 +413,26 @@
       }
 
       add("Adults", adults, tier.adult);
-      add(attending.indexOf("Saturday") === 0 ? "Ages 13–18" : "Under 18", youth, tier.youth);
 
-      if (children > 0) {
-        if (attending.indexOf("Saturday") === 0) {
-          add("Children under 12", children, 0);
-        } else if (known(tier.child)) {
-          add("Children under 12", children, tier.child);
-        } else {
-          incomplete = true;
-          lines.push("<li><span>Children under 12 × " + children + "</span><span>price TBA</span></li>");
+      var isSaturday = attending.indexOf("Saturday") === 0;
+      var isSunday   = attending.indexOf("Sunday") === 0;
+
+      // Sunday is priced "Adults / children" with no age split, so the two
+      // child tiers collapse into one line rather than repeating "Children".
+      if (isSunday && tier.youth === tier.child) {
+        add("Children", youth + children, tier.youth);
+      } else {
+        add(isSaturday ? "Ages 13–18" : "Under 18", youth, tier.youth);
+
+        if (children > 0) {
+          if (isSaturday) {
+            add("Children under 12", children, 0);
+          } else if (known(tier.child)) {
+            add("Children under 12", children, tier.child);
+          } else {
+            incomplete = true;
+            lines.push("<li><span>Children under 12 × " + children + "</span><span>price TBA</span></li>");
+          }
         }
       }
 

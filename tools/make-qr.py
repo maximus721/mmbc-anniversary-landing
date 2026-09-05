@@ -60,14 +60,22 @@ def main():
     qr.make_image().save(svg_path)
 
     # --- PNG (screen) ---
+    # Render at native module size rather than upscaling a small image.
+    # Upscaling produced edge artifacts that some decoders choked on, so the
+    # box_size is chosen to land near the target width in one clean pass.
     png_path = os.path.join(OUT_DIR, "anniversary-qr.png")
-    qr = qrcode.QRCode(**common)
+    probe = qrcode.QRCode(**common)
+    probe.add_data(url)
+    probe.make(fit=True)
+    modules = probe.modules_count + 2 * common["border"]
+
+    target = 1200
+    box = max(1, round(target / modules))
+
+    qr = qrcode.QRCode(**dict(common, box_size=box))
     qr.add_data(url)
     qr.make(fit=True)
     img = qr.make_image(fill_color=FG, back_color=BG).convert("RGB")
-
-    from PIL import Image
-    img = img.resize((1200, 1200), Image.NEAREST)
     img.save(png_path)
 
     print("URL encoded : " + url)

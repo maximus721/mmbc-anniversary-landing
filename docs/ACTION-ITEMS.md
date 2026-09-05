@@ -30,8 +30,8 @@ of these actually block that. Those are marked **BLOCKER**.
 
 | # | Action | Owner | Notes |
 |---|---|---|---|
-| 9 | **BLOCKER — Set the Sunday-only ticket price.** It does not exist yet, in any document. Registration cannot open with one of three options priced "TBD." | Anniversary committee | Also decide whether Sunday-only has a youth tier. |
-| 10 | **BLOCKER — Set the t-shirt price**, the size run, and whether 3XL/4XL carry the +$2 upcharge. | Anniversary committee | The meeting left this as "I think... but I don't think we're charging." That's not a decision yet. |
+| ~~9~~ | ~~Set the Sunday-only ticket price~~ **DONE** — Sunday Meal: Adults $65, children $35. Live on the site. | — | See item 32 below: this equals the Weekend Passport adult price. |
+| 10 | **BLOCKER — Set the t-shirt price.** Size run (S–4XL) and "no cost difference by size" are confirmed; **the price itself is still missing.** | Anniversary committee | The only unanswered price. Site shows "Price to be announced." |
 | 11 | **BLOCKER — Verify what Givelify can actually do.** Specifically: can it take separate giving categories/envelopes per item, and can people select a size or quantity? Log in and look. | Whoever holds the credentials | Nobody in the meeting knew for certain. The site is built to work either way — but the checkout wording changes depending on the answer. |
 | 12 | Hand over the Givelify credentials / account access. | [person who said "I'm gonna have that"] | |
 | 13 | Get the church payment details from Ms. Gwen and confirm all funds route to the church account. | [unassigned] | |
@@ -47,19 +47,30 @@ of these actually block that. Those are marked **BLOCKER**.
 
 | # | Action | Owner | Notes |
 |---|---|---|---|
-| 19 | Decide the t-shirt **order deadline** that still lands shirts before Oct 3, and put it on the site. | [unassigned] | Depends on printer turnaround. Nobody raised this in the meeting — flagging it because it's the kind of thing that quietly ruins a shirt order. |
+| ~~19~~ | ~~T-shirt order deadline~~ **DONE** — confirmed no deadline needed. | — | |
 | 20 | Build the announcement slideshow from the two flyers. | Shayna | She said she'd make it herself. |
 | 21 | Decide the Sunday morning music format — auxiliaries rotating (men's chorus, youth, praise team) vs. standard service. | Music ministry | Proposed and well-received, never decided. Mass choir is off the table. |
-| 22 | Confirm Friday night start time and Sunday morning service time. | [unassigned] | Both missing from every document. |
-| 23 | Settle the Walker Park entrance question — May Ave vs. Oak Street — and publish one answer. | [unassigned] | |
-| 24 | Pick one name: "Family Fun Day" or "Family Reunion." Use it everywhere. | Shayna | Currently both are in circulation. |
-| 25 | Add the year to the anniversary flyer before any large print run. | Shayna | Still reads "SUNDAY, OCTOBER 4TH" with no year, even after the 1:00 PM revision. |
+| 22 | Confirm **Friday night** start time. | [unassigned] | Sunday morning is now confirmed at 10:00 AM. Friday is still the only unknown time. |
+| ~~23~~ | ~~Walker Park entrance~~ **DONE** — 50 May Ave is the address, **entrance is on Oak Street** (behind the Raymond School). Both now shown on the site. | — | |
+| ~~24~~ | ~~Name~~ **DONE** — "Family Fun Day", described as a picnic-style family reunion. | — | |
+| 25 | Add **2026** to both Sunday flyers before any large print run. | Shayna | Agreed to add it, but the latest versions received still read "SUNDAY, OCTOBER 4TH" with no year. Not yet done. |
 | 26 | Plan the Sunday close-out crew (after the 1:00 PM celebration). | [unassigned] | Explicitly deferred in the meeting. |
 | 26a | **Resolve the Sunday setup window.** With the celebration at 1:00 PM there may be little or no gap after morning worship to turn the auditorium around. Move setup to Saturday evening / early Sunday, or end morning worship earlier. | Anniversary committee | Consequence of the time change — never discussed, because the meeting predates it. See MEETING-NOTES §12. |
 | 26b | Confirm the meal plan suits a **1:00 PM sitting** (lunch, not dinner). | [unassigned] | Quantities and menu differ from a 4:00 PM event. |
 | 26c | Check the Saturday-cleanup and Sunday-setup crews aren't the same exhausted people. | [unassigned] | Saturday cleanup starts 4:00 PM; Sunday setup must finish before 1:00 PM. |
 | 27 | Define what each volunteer shift actually does, in one line each, so people know what they're signing up for. | [unassigned] | Raised in the meeting: *"You also need to explain what these hands, bodies are doing in terms of function."* |
 | 28 | Set up the reconciliation process between cash/check sales and online registrations. | Ms. Gwen + web team | Two ledgers with no reconciliation plan is how people get double-charged. |
+
+---
+
+## Raised by the latest flyers and pricing
+
+| # | Action | Owner | Notes |
+|---|---|---|---|
+| 32 | **Confirm the Sunday-only price is intentional.** Sunday Meal adults **$65** is the *same* as the Weekend Passport adults **$65**, which also includes the $20 Saturday picnic. No adult would rationally buy Sunday-only. | Anniversary committee | Built as specified because it is on the approved flyer. If unintended, either drop Sunday-only to ~$45–50 or raise the passport to ~$80. The children's tiers are fine ($35 + $10 = $45 vs. $40 passport). |
+| 33 | **Define the age cutoff for the Sunday "children" $35 tier.** The flyer says only "Adults $65, children $35". | Anniversary committee | The site currently charges $35 for everyone under 18 on Sunday. Change `pricing.sunday` in `config.js` if a different cutoff is wanted. |
+| 34 | Typo on the 1:00 PM flyer: "Recogniition" should be "Recognition". | Shayna | Worth fixing in the same pass as adding the year. |
+| 35 | **Turn off Vercel Authentication** so the public can open the site. | Web team | Vercel dashboard → project → Settings → Deployment Protection. Until this is off, the QR code leads to a login wall. Verify in a private browsing window. |
 
 ---
 

@@ -851,6 +851,32 @@ textarea { resize: vertical; min-height: 84px; }
 .form-status strong { display: block; margin-bottom: .25rem; font-size: 1.05rem; }
 .form-status a { color: inherit; font-weight: 700; }
 
+/* Shown instead of the form while registration has nowhere to submit to. */
+.reg-pending {
+  background: var(--cream-100);
+  border: 1px solid var(--line-gold);
+  border-radius: var(--radius);
+  padding: clamp(1.6rem, 4vw, 2.6rem);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+.reg-pending-badge {
+  display: inline-block;
+  background: var(--maroon-700); color: var(--gold-300);
+  font-size: .72rem; font-weight: 700;
+  letter-spacing: .16em; text-transform: uppercase;
+  padding: .3rem .9rem; border-radius: 999px;
+  margin-bottom: 1rem;
+}
+.reg-pending h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 3vw, 1.75rem);
+  color: var(--maroon-800);
+  margin-bottom: .6rem;
+}
+.reg-pending p { color: var(--ink-soft); max-width: 46ch; margin-inline: auto; }
+.reg-pending .btn { margin-top: 1.4rem; }
+
 /* ---------- Volunteer shifts ---------- */
 .shift-list { list-style: none; margin: 0; padding: 0; display: grid; gap: .8rem; }
 .shift {
@@ -907,6 +933,9 @@ textarea { resize: vertical; min-height: 84px; }
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   max-width: 720px;
 }
+.flyer-grid--three { max-width: 1080px; }
+
+.also-flyer { margin: -.4rem 0 1.4rem; }
 
 /* ---------- Footer ---------- */
 .site-footer {
