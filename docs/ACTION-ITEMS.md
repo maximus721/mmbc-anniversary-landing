@@ -53,7 +53,7 @@ of these actually block that. Those are marked **BLOCKER**.
 | 22 | Confirm **Friday night** start time. | [unassigned] | Sunday morning is now confirmed at 10:00 AM. Friday is still the only unknown time. |
 | ~~23~~ | ~~Walker Park entrance~~ **DONE** — 50 May Ave is the address, **entrance is on Oak Street** (behind the Raymond School). Both now shown on the site. | — | |
 | ~~24~~ | ~~Name~~ **DONE** — "Family Fun Day", described as a picnic-style family reunion. | — | |
-| 25 | Add **2026** to both Sunday flyers before any large print run. | Shayna | **Still outstanding.** The corrected flyer fixed the "Recognition" typo but the date still reads "SUNDAY, OCTOBER 4TH" with no year. |
+| 25 | Add **2026** to the **10:00 AM service flyer**. | Shayna | The 1:00 PM celebration flyer now reads "SUNDAY, OCTOBER 4TH, 2026" — **done**. The 10:00 AM service flyer still has no year. |
 | 26 | Plan the Sunday close-out crew (after the 1:00 PM celebration). | [unassigned] | Explicitly deferred in the meeting. |
 | 26a | **Resolve the Sunday setup window.** With the celebration at 1:00 PM there may be little or no gap after morning worship to turn the auditorium around. Move setup to Saturday evening / early Sunday, or end morning worship earlier. | Anniversary committee | Consequence of the time change — never discussed, because the meeting predates it. See MEETING-NOTES §12. |
 | 26b | Confirm the meal plan suits a **1:00 PM sitting** (lunch, not dinner). | [unassigned] | Quantities and menu differ from a 4:00 PM event. |
