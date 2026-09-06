@@ -53,7 +53,7 @@ of these actually block that. Those are marked **BLOCKER**.
 | 22 | Confirm **Friday night** start time. | [unassigned] | Sunday morning is now confirmed at 10:00 AM. Friday is still the only unknown time. |
 | ~~23~~ | ~~Walker Park entrance~~ **DONE** — 50 May Ave is the address, **entrance is on Oak Street** (behind the Raymond School). Both now shown on the site. | — | |
 | ~~24~~ | ~~Name~~ **DONE** — "Family Fun Day", described as a picnic-style family reunion. | — | |
-| 25 | Add **2026** to both Sunday flyers before any large print run. | Shayna | Agreed to add it, but the latest versions received still read "SUNDAY, OCTOBER 4TH" with no year. Not yet done. |
+| 25 | Add **2026** to both Sunday flyers before any large print run. | Shayna | **Still outstanding.** The corrected flyer fixed the "Recognition" typo but the date still reads "SUNDAY, OCTOBER 4TH" with no year. |
 | 26 | Plan the Sunday close-out crew (after the 1:00 PM celebration). | [unassigned] | Explicitly deferred in the meeting. |
 | 26a | **Resolve the Sunday setup window.** With the celebration at 1:00 PM there may be little or no gap after morning worship to turn the auditorium around. Move setup to Saturday evening / early Sunday, or end morning worship earlier. | Anniversary committee | Consequence of the time change — never discussed, because the meeting predates it. See MEETING-NOTES §12. |
 | 26b | Confirm the meal plan suits a **1:00 PM sitting** (lunch, not dinner). | [unassigned] | Quantities and menu differ from a 4:00 PM event. |
@@ -69,7 +69,7 @@ of these actually block that. Those are marked **BLOCKER**.
 |---|---|---|---|
 | 32 | **Confirm the Sunday-only price is intentional.** Sunday Meal adults **$65** is the *same* as the Weekend Passport adults **$65**, which also includes the $20 Saturday picnic. No adult would rationally buy Sunday-only. | Anniversary committee | Built as specified because it is on the approved flyer. If unintended, either drop Sunday-only to ~$45–50 or raise the passport to ~$80. The children's tiers are fine ($35 + $10 = $45 vs. $40 passport). |
 | 33 | **Define the age cutoff for the Sunday "children" $35 tier.** The flyer says only "Adults $65, children $35". | Anniversary committee | The site currently charges $35 for everyone under 18 on Sunday. Change `pricing.sunday` in `config.js` if a different cutoff is wanted. |
-| 34 | Typo on the 1:00 PM flyer: "Recogniition" should be "Recognition". | Shayna | Worth fixing in the same pass as adding the year. |
+| ~~34~~ | ~~Typo "Recogniition"~~ **DONE** — corrected flyer received and live. | — | Note the corrected file is 976px wide vs 1195px before, so the full-size view is slightly lower resolution. Fine for screen; ask the designer for a larger export if it will be printed big. |
 | 35 | **Turn off Vercel Authentication** so the public can open the site. | Web team | Vercel dashboard → project → Settings → Deployment Protection. Until this is off, the QR code leads to a login wall. Verify in a private browsing window. |
 
 ---
