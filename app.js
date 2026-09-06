@@ -199,6 +199,103 @@
   }
 
   /* ==================================================================
+     4b. HERO FLYER CAROUSEL
+     ================================================================== */
+  (function () {
+    var root   = $("#heroCarousel");
+    var track  = $("#carouselTrack");
+    var dotsEl = $("#carouselDots");
+    if (!root || !track || !dotsEl) return;
+
+    var slides = $$(".carousel-slide", track);
+    if (slides.length < 2) { dotsEl.hidden = true; return; }
+
+    var reduced = window.matchMedia &&
+                  window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var DELAY = 5500;
+    var index = 0;
+    var timer = null;
+
+    // --- dots ---
+    var dots = slides.map(function (slide, i) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "carousel-dot";
+      b.setAttribute("role", "tab");
+      b.setAttribute("aria-label", (slide.getAttribute("aria-label") || "Slide " + (i + 1)));
+      b.setAttribute("aria-selected", i === 0 ? "true" : "false");
+      b.addEventListener("click", function () { goTo(i); restart(); });
+      dotsEl.appendChild(b);
+      return b;
+    });
+
+    function goTo(next) {
+      index = (next + slides.length) % slides.length;
+      slides.forEach(function (s, i) {
+        var on = i === index;
+        s.classList.toggle("is-active", on);
+        // Keep off-screen slides out of the tab order and the a11y tree.
+        s.setAttribute("aria-hidden", on ? "false" : "true");
+        var link = s.querySelector("a");
+        if (link) link.tabIndex = on ? 0 : -1;
+      });
+      dots.forEach(function (d, i) {
+        d.setAttribute("aria-selected", i === index ? "true" : "false");
+      });
+    }
+
+    function next() { goTo(index + 1); }
+    function prev() { goTo(index - 1); }
+
+    function start() {
+      if (reduced || timer) return;
+      timer = window.setInterval(next, DELAY);
+    }
+    function stop() {
+      if (timer) { window.clearInterval(timer); timer = null; }
+    }
+    function restart() { stop(); start(); }
+
+    $("#carouselNext").addEventListener("click", function () { next(); restart(); });
+    $("#carouselPrev").addEventListener("click", function () { prev(); restart(); });
+
+    // Pause while somebody is looking at or interacting with it.
+    root.addEventListener("mouseenter", stop);
+    root.addEventListener("mouseleave", start);
+    root.addEventListener("focusin", stop);
+    root.addEventListener("focusout", function (e) {
+      if (!root.contains(e.relatedTarget)) start();
+    });
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) stop(); else start();
+    });
+
+    // Keyboard
+    root.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowRight") { e.preventDefault(); next(); restart(); }
+      else if (e.key === "ArrowLeft") { e.preventDefault(); prev(); restart(); }
+    });
+
+    // Touch swipe
+    var startX = null, startY = null;
+    track.addEventListener("touchstart", function (e) {
+      startX = e.touches[0].clientX; startY = e.touches[0].clientY; stop();
+    }, { passive: true });
+    track.addEventListener("touchend", function (e) {
+      if (startX === null) return;
+      var dx = e.changedTouches[0].clientX - startX;
+      var dy = e.changedTouches[0].clientY - startY;
+      // Only treat it as a swipe if it was mostly horizontal.
+      if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy)) { dx < 0 ? next() : prev(); }
+      startX = startY = null;
+      start();
+    }, { passive: true });
+
+    goTo(0);
+    start();
+  })();
+
+  /* ==================================================================
      5. LIGHTBOX
      ================================================================== */
   var lightbox = $("#lightbox");

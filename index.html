@@ -59,33 +59,93 @@
 <!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-glow" aria-hidden="true"></div>
+
   <div class="wrap hero-inner">
 
-    <p class="eyebrow">Mount Moriah Baptist Church &middot; Brockton, Massachusetts</p>
+    <div class="hero-copy">
+      <p class="eyebrow">Mount Moriah Baptist Church &middot; Brockton, Massachusetts</p>
 
-    <h1 class="hero-title">
-      <span class="hero-num">45<sup>th</sup></span>
-      <span class="hero-script">Anniversary</span>
-      <span class="hero-caps">Celebration</span>
-    </h1>
+      <h1 class="hero-title">
+        <span class="hero-num">45<sup>th</sup></span>
+        <span class="hero-script">Anniversary</span>
+        <span class="hero-caps">Celebration</span>
+      </h1>
 
-    <p class="hero-tagline">Honoring Our Past &middot; Celebrating Our Present &middot; Embracing Our Future</p>
+      <p class="hero-tagline">Honoring Our Past &middot; Celebrating Our Present &middot; Embracing Our Future</p>
 
-    <p class="hero-dates">
-      <strong>October 3&ndash;4, 2026</strong>
-      <span class="hero-years">1981 &ndash; 2026</span>
-    </p>
+      <p class="hero-dates">
+        <strong>October 3&ndash;4, 2026</strong>
+        <span class="hero-years">1981 &ndash; 2026</span>
+      </p>
 
-    <blockquote class="hero-theme">
-      <p>&ldquo;The Lord Will Provide&rdquo;</p>
-      <cite>Genesis 22:14</cite>
-    </blockquote>
-
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="#register" data-cta>Register for the Weekend</a>
-      <a class="btn btn-ghost" href="#weekend">See the Schedule</a>
     </div>
 
+    <div class="hero-extra">
+      <blockquote class="hero-theme">
+        <p>&ldquo;The Lord Will Provide&rdquo;</p>
+        <cite>Genesis 22:14</cite>
+      </blockquote>
+
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#register" data-cta>Register for the Weekend</a>
+        <a class="btn btn-ghost" href="#weekend">See the Schedule</a>
+      </div>
+    </div>
+
+    <!-- ---------- Flyer carousel ---------- -->
+    <div class="hero-media">
+      <div class="carousel" id="heroCarousel"
+           role="group" aria-roledescription="carousel" aria-label="Anniversary weekend flyers">
+
+        <div class="carousel-viewport">
+          <ul class="carousel-track" id="carouselTrack">
+
+            <li class="carousel-slide is-active" role="group" aria-roledescription="slide" aria-label="1 of 3: Family Fun Day">
+              <a href="assets/flyers/family-fun-day.jpg" data-lightbox
+                 aria-label="Open the full-size Family Fun Day flyer">
+                <img src="assets/flyers/family-fun-day-thumb.jpg"
+                     alt="Family Fun Day flyer: Saturday, October 3, 2026, Walker Park, noon to 4:00 PM, picnic style."
+                     width="700" height="906" fetchpriority="high" decoding="async">
+              </a>
+              <p class="carousel-caption"><span>Saturday, Oct 3</span> Family Fun Day &middot; Walker Park</p>
+            </li>
+
+            <li class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 3: Anniversary Service">
+              <a href="assets/flyers/morning-service.jpg" data-lightbox
+                 aria-label="Open the full-size 10:00 AM Anniversary Service flyer">
+                <img src="assets/flyers/morning-service-thumb.jpg"
+                     alt="Anniversary Service flyer: Sunday, October 4th, 10:00 AM, special guest speaker Rev. Lin Dawson."
+                     width="700" height="875" loading="lazy" decoding="async">
+              </a>
+              <p class="carousel-caption"><span>Sunday, 10:00 AM</span> Anniversary Service &middot; Rev. Lin Dawson</p>
+            </li>
+
+            <li class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 3: Anniversary Celebration">
+              <a href="assets/flyers/anniversary-service.jpg" data-lightbox
+                 aria-label="Open the full-size 1:00 PM Anniversary Celebration flyer">
+                <img src="assets/flyers/anniversary-service-thumb.jpg"
+                     alt="45th Anniversary Celebration flyer: Sunday, October 4th, 1:00 PM, honoring founding pastor Rev. Eugene L. Neville."
+                     width="700" height="771" loading="lazy" decoding="async">
+              </a>
+              <p class="carousel-caption"><span>Sunday, 1:00 PM</span> Celebration &middot; Honoring Rev. Neville</p>
+            </li>
+
+          </ul>
+
+          <button type="button" class="carousel-arrow carousel-arrow--prev" id="carouselPrev" aria-label="Previous flyer">
+            <span aria-hidden="true">&#8249;</span>
+          </button>
+          <button type="button" class="carousel-arrow carousel-arrow--next" id="carouselNext" aria-label="Next flyer">
+            <span aria-hidden="true">&#8250;</span>
+          </button>
+        </div>
+
+        <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Choose a flyer"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
     <div class="countdown" id="countdown" aria-live="polite">
       <div class="cd-unit"><span class="cd-num" data-cd="days">--</span><span class="cd-label">Days</span></div>
       <div class="cd-unit"><span class="cd-num" data-cd="hours">--</span><span class="cd-label">Hours</span></div>
@@ -93,6 +153,7 @@
       <div class="cd-unit"><span class="cd-num" data-cd="seconds">--</span><span class="cd-label">Seconds</span></div>
     </div>
   </div>
+
   <div class="hero-rule" aria-hidden="true"></div>
 </section>
 
