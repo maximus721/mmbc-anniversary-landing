@@ -10,6 +10,41 @@ of these actually block that. Those are marked **BLOCKER**.
 
 ---
 
+## UPDATE — 2026-09-07 committee notes (applied 2026-09-08)
+
+These came from `MMBC_45th_20260907_tech_summary.pdf` and are **live on the site**:
+
+| Change | Status |
+|---|---|
+| "Preparation Night" renamed **Celebration Preparation**, moved to **Friday Sept 25, 6:30 PM** at the church | ✅ live |
+| **Registration deadline: Saturday, September 26** | ✅ live, shown as a banner |
+| Speakers: **Rev. Lin Dawson (10:00 AM)** and **Rev. Michael Hawkins (1:00 PM)** | ✅ live |
+| **T-shirts $20, all sizes, limited quantity until sold out** | ✅ live |
+| **No digital payments** — online giving replaced with a pledge, payment in person | ✅ live |
+| Registration form output reshaped to match the committee's tracker spreadsheet | ✅ done |
+| Confirmation email on registration + payment-confirmation menu | ✅ written, needs deploying — see `docs/GOOGLE-SHEET-SETUP.md` |
+| Replace Rev. Neville's flyer with the Rev. Michael Hawkins version | ⛔ **BLOCKED — the image file didn't come through, only the PDF and spreadsheet. Please re-send it.** |
+
+### Still open from this round
+
+| # | Action | Owner | Notes |
+|---|---|---|---|
+| 36 | **BLOCKER — deploy the Apps Script** so registrations land somewhere. Registration is open as of today and there is currently nowhere for a submission to go. | Web team | 15 min. `docs/GOOGLE-SHEET-SETUP.md` has the script, the confirmation email and the test steps. |
+| 37 | **Re-send the Rev. Michael Hawkins flyer** as an image file. | Shayna | Site still shows the previous flyer. Note the version pictured also lost the "2026" and the costs box that the last one had. |
+| 38 | **Is Friday Oct 2 still a prep night, or does Sept 25 replace it?** The note says decorating "will begin" Sept 25, which could mean more than one session. | Anniversary committee | The site currently shows Sept 25 only. |
+| 39 | Confirm the **Sept 26 registration deadline** is what should be advertised, given the event is Oct 3–4. | Anniversary committee | A week's gap is normal for catering counts — just confirming it isn't a typo. |
+| 40 | Draft or approve the **wording** of the two confirmation emails. | Shayna | I've written both; they're in `docs/GOOGLE-SHEET-SETUP.md` ready to edit. |
+| 41 | Reconcile the **existing paid registrations** (Sheila Forde et al., incl. one Givelify payment on 9/6) with whatever the site collects from today. | Ms. Gwen + web team | 11 attendees and 13 shirts are already recorded in the tracker. |
+
+### Noted for the next meeting (from the same PDF, no action yet)
+
+Music — choirs plus a "gospel chorus" of old-school highlights · Tech — **simulcast from Florida
+for Rev. Neville** · collecting well-wish videos · in-memoriam slideshow · dinner music playlist.
+
+The simulcast is the one with a real lead time. Worth naming an owner early.
+
+---
+
 ## Before tomorrow (Sunday) — announcement day
 
 | # | Action | Owner | Notes |
@@ -31,9 +66,9 @@ of these actually block that. Those are marked **BLOCKER**.
 | # | Action | Owner | Notes |
 |---|---|---|---|
 | ~~9~~ | ~~Set the Sunday-only ticket price~~ **DONE** — Sunday Meal: Adults $65, children $35. Live on the site. | — | See item 32 below: this equals the Weekend Passport adult price. |
-| 10 | **BLOCKER — Set the t-shirt price.** Size run (S–4XL) and "no cost difference by size" are confirmed; **the price itself is still missing.** | Anniversary committee | The only unanswered price. Site shows "Price to be announced." |
-| 11 | **BLOCKER — Verify what Givelify can actually do.** Specifically: can it take separate giving categories/envelopes per item, and can people select a size or quantity? Log in and look. | Whoever holds the credentials | Nobody in the meeting knew for certain. The site is built to work either way — but the checkout wording changes depending on the answer. |
-| 12 | Hand over the Givelify credentials / account access. | [person who said "I'm gonna have that"] | |
+| ~~10~~ | ~~T-shirt price~~ **DONE** — $20, all sizes, limited quantity until sold out. Live. | — | |
+| ~~11~~ | ~~Verify Givelify~~ **MOOT** — the church will not collect digital payments. Payment is in person. | — | |
+| ~~12~~ | ~~Givelify credentials~~ **MOOT** — no online payments. | — | Note one registrant did already pay via Givelify on 9/6; see item 41. |
 | 13 | Get the church payment details from Ms. Gwen and confirm all funds route to the church account. | [unassigned] | |
 | 14 | Send the master list of choices people check off at registration. | Shayna | She committed to this twice: *"I will give you a list of everything that we need people to check off."* |
 | 15 | Send the full subcommittee list. | Shayna | Only "decorations" was named out loud. |

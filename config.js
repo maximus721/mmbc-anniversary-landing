@@ -16,9 +16,12 @@ window.MMBC_CONFIG = {
                        shows as "opens Tuesday". Use this for Sunday.
      "registration"  : full registration form, tickets and store live.
      ------------------------------------------------------------------- */
-  mode: "save-the-date",
+  mode: "registration",
 
   registrationOpensLabel: "Tuesday, September 8",
+
+  // CONFIRMED 2026-09-07: registration closes Saturday, September 26.
+  registrationDeadline: "Saturday, September 26, 2026",
 
   /* -------------------------------------------------------------------
      2. WHERE THE FORM SENDS DATA
@@ -35,13 +38,19 @@ window.MMBC_CONFIG = {
   googleFormUrl: "",
 
   /* -------------------------------------------------------------------
-     3. PAYMENT
-     Paste the church's Givelify giving link.
-     NOTE: nobody has confirmed yet whether Givelify supports separate
-     categories per item. Until that is checked, the site collects the
-     order here and sends people to Givelify to pay the total shown.
+     3. PAYMENT — IN PERSON ONLY
+     Decided 2026-09-07: the church cannot collect digital payments for
+     the anniversary. Registration is a PLEDGE; people pay in person at
+     the church. The site therefore takes no card details and shows no
+     online giving button.
+     Leave givelifyUrl empty unless that decision is reversed.
      ------------------------------------------------------------------- */
+  paymentMode: "in-person",
   givelifyUrl: "",
+
+  // Where and when people pay. Shown on the registration and pledge
+  // sections so nobody is left guessing.
+  payInPersonNote: "Pay at the church — see any member of the anniversary committee, or the Alexander Room on Sundays.",
 
   /* -------------------------------------------------------------------
      4. CONTACT
@@ -81,13 +90,12 @@ window.MMBC_CONFIG = {
      6. T-SHIRT
      ------------------------------------------------------------------- */
   shirt: {
-    price: null,              // ***STILL NOT SET*** — the only price the
-                              // committee hasn't given us. Everything else
-                              // is confirmed.
+    price: 20,                // CONFIRMED: $20, every size
     bigAndTallUpcharge: 0,    // CONFIRMED: no cost difference by size
     sizes: ["S", "M", "L", "XL", "2XL", "3XL", "4XL"],
     bigAndTallSizes: [],
-    orderDeadline: null       // CONFIRMED: no deadline needed
+    orderDeadline: null,      // No date deadline — but see limitedStock below
+    limitedStock: true        // "Limited quantity, available until sold out"
   },
 
   /* -------------------------------------------------------------------

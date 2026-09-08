@@ -11,6 +11,11 @@
   var PRICING = CFG.pricing || {};
   var SHIRT = CFG.shirt || {};
 
+  // The church cannot take digital payments for the anniversary: registration
+  // is a pledge and money changes hands at the church. Defined here because
+  // several sections below depend on it.
+  var IN_PERSON = CFG.paymentMode === "in-person" || !CFG.givelifyUrl;
+
   var $  = function (s, r) { return (r || document).querySelector(s); };
   var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
 
@@ -171,9 +176,21 @@
   }
 
   var deadlineLine = $("#shirtDeadlineLine");
-  if (deadlineLine && SHIRT.orderDeadline) {
-    deadlineLine.innerHTML = "<strong>Order by " + SHIRT.orderDeadline + "</strong> to have your shirt for the weekend";
-    deadlineLine.hidden = false;
+  if (deadlineLine) {
+    if (SHIRT.orderDeadline) {
+      deadlineLine.innerHTML = "<strong>Order by " + SHIRT.orderDeadline + "</strong> to have your shirt for the weekend";
+      deadlineLine.hidden = false;
+    } else if (SHIRT.limitedStock) {
+      deadlineLine.innerHTML = "<strong>Limited quantity</strong> &mdash; available until sold out";
+      deadlineLine.hidden = false;
+    }
+  }
+
+  var storeNote = $("#storeNote");
+  if (storeNote && IN_PERSON) {
+    storeNote.innerHTML =
+      "Order your shirt as part of registration &mdash; there is a size and quantity picker in " +
+      "the form. <strong>Payment is in person at the church</strong>, not online.";
   }
 
   /* ==================================================================
@@ -189,13 +206,22 @@
 
   var giveActions = $("#giveActions");
   if (giveActions) {
-    if (CFG.givelifyUrl) {
+    if (!IN_PERSON && CFG.givelifyUrl) {
       giveActions.innerHTML =
         '<a class="btn btn-gold" href="' + CFG.givelifyUrl + '" target="_blank" rel="noopener">Give through Givelify</a>';
     } else {
+      // The church cannot take digital payments for the anniversary, so this
+      // is a pledge: people tell us, then hand it over at the church.
       giveActions.innerHTML =
-        '<p class="give-pending">Online giving link coming shortly</p>';
+        '<a class="btn btn-gold" href="#register" data-cta>Pledge a gift</a>';
     }
+  }
+
+  var giveNote = $("#giveNote");
+  if (giveNote) {
+    giveNote.innerHTML = IN_PERSON
+      ? "Gifts are received in person at the church &mdash; cash or check. Tell us on the form and we&rsquo;ll look out for you."
+      : "You can also give in person &mdash; cash or check &mdash; at the church.";
   }
 
   /* ==================================================================
@@ -341,6 +367,28 @@
   var notice = $("#modeNotice");
   var form = $("#regForm");
 
+  // Fine print under the submit button: what happens next, and how to pay.
+  var fineprint = $("#formFineprint");
+  if (fineprint) {
+    fineprint.innerHTML = IN_PERSON
+      ? "No payment online. We&rsquo;ll email your total, then you pay in person at the church. " +
+        "Your information stays with the anniversary committee."
+      : "We&rsquo;ll follow up by email with your total and how to pay. Your information stays " +
+        "with the anniversary committee.";
+  }
+
+  // Registration closes on a fixed date — say so where people will see it.
+  if (MODE === "registration" && CFG.registrationDeadline && notice) {
+    notice.hidden = false;
+    var badge = notice.querySelector(".notice-badge");
+    if (badge) badge.textContent = "Register by";
+    var t = $("#modeNoticeText");
+    if (t) {
+      t.innerHTML = "Registration closes <strong>" + CFG.registrationDeadline +
+        "</strong>. Payment is in person at the church &mdash; there is no online payment.";
+    }
+  }
+
   if (MODE === "save-the-date") {
     if (notice) {
       notice.hidden = false;
@@ -462,6 +510,7 @@
        8. LIVE ESTIMATE
        ================================================================== */
     var estimateEl = $("#estimate");
+    var lastTotal = 0;   // most recent computed total, sent as Amount Due
 
     function getAttending() {
       var r = form.querySelector('input[name="attending"]:checked');
@@ -544,12 +593,15 @@
 
       if (!lines.length) { estimateEl.innerHTML = ""; return; }
 
+      lastTotal = total;
+
       estimateEl.innerHTML =
         '<ul class="estimate-lines">' + lines.join("") + "</ul>" +
         '<p class="estimate-total"><span>Estimated total</span><span>' + money(total) + "</span></p>" +
         (incomplete
           ? '<p class="estimate-note">Some prices are still being finalised — we’ll confirm your full total by email before you pay.</p>'
-          : '<p class="estimate-note">This is an estimate. We’ll confirm it by email with payment instructions.</p>');
+          : '<p class="estimate-note">This is an estimate. We’ll confirm it by email' +
+            (IN_PERSON ? ' — payment is in person at the church.' : ' with payment instructions.') + '</p>');
     }
 
     form.addEventListener("change", updateEstimate);
@@ -631,24 +683,34 @@
       var shifts = $$('input[name="shifts"]:checked', form).map(function (c) { return c.value; });
       var shirts = shirtOrder();
 
+      var reg = MODE === "registration";
+      var qty = reg ? num("countAdults") + num("countYouth") + num("countChildren") : "";
+
+      // Field names mirror the committee's own tracker spreadsheet so rows
+      // drop straight in without re-keying.
       return {
-        timestamp:     new Date().toISOString(),
-        mode:          MODE,
-        fullName:      $("#fullName").value.trim(),
-        email:         $("#email").value.trim(),
-        phone:         $("#phone").value.trim(),
-        attending:     MODE === "registration" ? getAttending() : "(save the date — registration not yet open)",
-        adults:        MODE === "registration" ? num("countAdults")   : "",
-        youth13to18:   MODE === "registration" ? num("countYouth")    : "",
-        childrenUnder12: MODE === "registration" ? num("countChildren") : "",
-        wantsShirt:    wantsShirt && wantsShirt.checked ? "Yes" : "No",
-        shirtOrder:    shirts.map(function (s) { return s.size + " x" + s.qty; }).join(", "),
-        shirtTotalQty: shirts.reduce(function (a, s) { return a + s.qty; }, 0),
-        wantsVolunteer: wantsVolunteer && wantsVolunteer.checked ? "Yes" : "No",
-        volunteerShifts: shifts.join(", "),
-        wantsDonate:   $("#wantsDonate").checked ? "Yes" : "No",
-        notes:         $("#notes").value.trim(),
-        pageUrl:       window.location.href
+        timestamp:        new Date().toISOString(),
+        mode:             MODE,
+        registrant:       $("#fullName").value.trim(),
+        phone:            $("#phone").value.trim(),
+        email:            $("#email").value.trim(),
+        registrationType: reg ? getAttending() : "(registration not yet open)",
+        registrationQty:  qty,
+        adults:           reg ? num("countAdults")   : "",
+        youth13to18:      reg ? num("countYouth")    : "",
+        childrenUnder12:  reg ? num("countChildren") : "",
+        tshirtQty:        shirts.reduce(function (a, s) { return a + s.qty; }, 0),
+        tshirtSizes:      shirts.map(function (s) { return s.qty + " x " + s.size; }).join(" / "),
+        amountDue:        reg ? lastTotal : "",
+        amountPaid:       "",
+        paymentStatus:    "Pending",
+        paymentMethod:    "",
+        paymentDate:      "",
+        volunteer:        wantsVolunteer && wantsVolunteer.checked ? "Yes" : "No",
+        volunteerArea:    shifts.join(", "),
+        pledgeGift:       $("#wantsDonate").checked ? "Yes" : "No",
+        notes:            $("#notes").value.trim(),
+        pageUrl:          window.location.href
       };
     }
 
@@ -694,8 +756,11 @@
           showStatus("ok",
             MODE === "registration" ? "You’re registered — thank you!" : "Thank you — you’re on the list",
             MODE === "registration"
-              ? "We’ve got your details. Watch your email for your total and how to pay. " +
-                "We can’t wait to celebrate 45 years with you."
+              ? (IN_PERSON
+                  ? "We’ve got your details. Watch your email for your total — then pay in " +
+                    "person at the church. We can’t wait to celebrate 45 years with you."
+                  : "We’ve got your details. Watch your email for your total and how to pay. " +
+                    "We can’t wait to celebrate 45 years with you.")
               : "We’ll email you as soon as registration opens on " +
                 (CFG.registrationOpensLabel || "Tuesday") + ".");
         })
@@ -719,9 +784,10 @@
   if (window.console) {
     var warn = [];
     if (!CFG.formEndpoint && !CFG.googleFormUrl) warn.push("formEndpoint / googleFormUrl not set — the form cannot submit.");
-    if (!CFG.givelifyUrl) warn.push("givelifyUrl not set — the Give button is hidden.");
+    if (!IN_PERSON && !CFG.givelifyUrl) warn.push("givelifyUrl not set — the Give button is hidden.");
     if (!known((PRICING.sunday || {}).adult)) warn.push("pricing.sunday.adult not set — showing 'To be announced'.");
     if (!known(SHIRT.price)) warn.push("shirt.price not set — showing 'To be announced'.");
+    if (MODE === "registration" && !CFG.registrationDeadline) warn.push("registrationDeadline not set.");
     if (!CFG.contactEmail) warn.push("contactEmail not set — no fallback contact shown.");
     if (warn.length) {
       console.warn("[MMBC 45th] Configuration still incomplete:\n • " + warn.join("\n • ") +
