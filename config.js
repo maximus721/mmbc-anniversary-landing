@@ -31,7 +31,7 @@ window.MMBC_CONFIG = {
      and failing that, to an email link. It will never silently drop a
      submission.
      ------------------------------------------------------------------- */
-  formEndpoint: "",
+  formEndpoint: "https://script.google.com/macros/s/AKfycbygZcnUHas3OerUI_MOExLmpnyYEIHf0lqT2ARWQxbYCup_nyQ5zt2mkmDyyXRRxsaO/exec",
 
   // Optional fallback: a plain Google Form URL. Used only if
   // formEndpoint is empty.
