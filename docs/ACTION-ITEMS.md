@@ -23,7 +23,7 @@ These came from `MMBC_45th_20260907_tech_summary.pdf` and are **live on the site
 | **No digital payments** — online giving replaced with a pledge, payment in person | ✅ live |
 | Registration form output reshaped to match the committee's tracker spreadsheet | ✅ done |
 | Confirmation email on registration + payment-confirmation menu | ✅ written, needs deploying — see `docs/GOOGLE-SHEET-SETUP.md` |
-| Replace Rev. Neville's flyer with the Rev. Michael Hawkins version | ⛔ **BLOCKED — the image file didn't come through, only the PDF and spreadsheet. Please re-send it.** |
+| Replace Rev. Neville's flyer with the Rev. Michael Hawkins version | ✅ live (2026-09-08) — swapped for the version showing the "Special Guest Speaker" banner, at Shayna's explicit request. **Trade-off:** this version has no "2026" on it and no costs box (both were on the version it replaces). Prices are still shown on the website itself, but if this flyer gets printed, it reads as year-less. |
 
 ### Still open from this round
 
@@ -35,6 +35,16 @@ These came from `MMBC_45th_20260907_tech_summary.pdf` and are **live on the site
 | 39 | Confirm the **Sept 26 registration deadline** is what should be advertised, given the event is Oct 3–4. | Anniversary committee | A week's gap is normal for catering counts — just confirming it isn't a typo. |
 | 40 | Draft or approve the **wording** of the two confirmation emails. | Shayna | I've written both; they're in `docs/GOOGLE-SHEET-SETUP.md` ready to edit. |
 | 41 | Reconcile the **existing paid registrations** (Sheila Forde et al., incl. one Givelify payment on 9/6) with whatever the site collects from today. | Ms. Gwen + web team | 11 attendees and 13 shirts are already recorded in the tracker. |
+
+### 2026-09-08 evening — Shayna's round of change requests
+
+| # | Action | Status | Notes |
+|---|---|---|---|
+| 42 | Swap 1:00 PM flyer for the version with the speaker banner | ✅ live | See item 37 above for the year/costs trade-off — a conscious call, not an oversight. |
+| 43 | Remove "preparation night beforehand" language from the home page's "The Weekend" section | ✅ live | This is separate from item 38's open scheduling question (is there a *second* prep night on Oct 2, distinct from the Sept 25 Celebration Preparation?) — that question is still open. I only removed the sentence per this explicit request; I haven't made a scheduling decision. |
+| 44 | Add explicit dates to the Saturday/Sunday volunteer shifts on the "We Need Hands" page | ✅ live | Now reads "Sat, Oct 3" and "Sun, Oct 4" (matching the existing "Fri, Sep 25" format). Also updated the matching checkboxes in the registration form for consistency. |
+| 45 | Bug report: registration form headcount section shows "Massachusetts" under ages 13–18 | ⚠️ mitigated, **not confirmed fixed** | I checked the code — there is no literal "Massachusetts" text anywhere near that field; the word only appears in unrelated hero copy. This strongly suggests an iOS Safari autofill quirk (Safari sometimes offers to fill a number field with an address-book value), which I can't reproduce or verify myself outside Safari on an iPhone. I added `autocomplete="off"` to the three headcount fields as a mitigation. **Please retest on the phone that showed the bug and let me know if it's still happening** — if it is, I'll need a screenshot of it live to dig further. |
+| 46 | Reg confirmation email should say "see Gwen Hickman for payment" | ✅ email text updated, ⛔ **needs you to redeploy** | Updated in `docs/GOOGLE-SHEET-SETUP.md`'s `sendConfirmation_` function. Since I can't touch your Google account, you'll need to paste the updated script back into Apps Script and do **Deploy → Manage deployments → pencil icon → Version: New version → Deploy** (editing the code alone doesn't update the live URL). I also updated `payInPersonNote` in `config.js` for consistency, but flagging honestly: that config value isn't actually read anywhere in the site's code right now (it's dead/unused), so that edit has no visible effect on the page itself — only the email wording actually changes what people see. |
 
 ### Noted for the next meeting (from the same PDF, no action yet)
 

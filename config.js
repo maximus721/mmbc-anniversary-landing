@@ -50,7 +50,7 @@ window.MMBC_CONFIG = {
 
   // Where and when people pay. Shown on the registration and pledge
   // sections so nobody is left guessing.
-  payInPersonNote: "Pay at the church — see any member of the anniversary committee, or the Alexander Room on Sundays.",
+  payInPersonNote: "Pay at the church — see Gwen Hickman, or the Alexander Room on Sundays.",
 
   /* -------------------------------------------------------------------
      4. CONTACT
