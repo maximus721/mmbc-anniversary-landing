@@ -506,6 +506,19 @@
       });
     }
 
+    /* --- restrict gift to Rev. Neville's pastor's gift --- */
+    var wantsDonateEl = $("#wantsDonate");
+    var giftRestrict = $("#giftRestrict");
+    if (wantsDonateEl && giftRestrict) {
+      wantsDonateEl.addEventListener("change", function () {
+        giftRestrict.hidden = !wantsDonateEl.checked;
+        if (!wantsDonateEl.checked) {
+          var restrictBox = $("#giftRestricted");
+          if (restrictBox) restrictBox.checked = false;
+        }
+      });
+    }
+
     /* ==================================================================
        8. LIVE ESTIMATE
        ================================================================== */
@@ -709,6 +722,7 @@
         volunteer:        wantsVolunteer && wantsVolunteer.checked ? "Yes" : "No",
         volunteerArea:    shifts.join(", "),
         pledgeGift:       $("#wantsDonate").checked ? "Yes" : "No",
+        giftRestricted:   $("#wantsDonate").checked && $("#giftRestricted").checked ? "Yes" : "No",
         notes:            $("#notes").value.trim(),
         pageUrl:          window.location.href
       };
@@ -750,6 +764,7 @@
           form.reset();
           if (shirtRows) shirtRows.hidden = true;
           if (volunteerShifts) volunteerShifts.hidden = true;
+          if (giftRestrict) giftRestrict.hidden = true;
           if (shirtRowList) shirtRowList.innerHTML = "";
           if (estimateEl) estimateEl.innerHTML = "";
 

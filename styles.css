@@ -948,7 +948,7 @@ textarea { resize: vertical; min-height: 84px; }
 }
 .estimate-note { margin: .6rem 0 0; font-size: .86rem; color: var(--maroon-700); font-weight: 600; }
 
-.shirt-rows, .volunteer-shifts { margin-top: 1rem; padding-left: 1.7rem; border-left: 2px solid var(--line-gold); }
+.shirt-rows, .volunteer-shifts, .gift-restrict { margin-top: 1rem; padding-left: 1.7rem; border-left: 2px solid var(--line-gold); }
 .shirt-row-list { display: grid; gap: .7rem; margin-bottom: .9rem; }
 .shirt-row { display: grid; grid-template-columns: 1fr 110px auto; gap: .6rem; align-items: end; }
 .shirt-row .field { margin: 0; }

@@ -50,7 +50,8 @@ var HEADERS = [
   'adults', 'youth13to18', 'childrenUnder12',
   'tshirtQty', 'tshirtSizes',
   'amountDue', 'amountPaid', 'paymentStatus', 'paymentMethod', 'paymentDate',
-  'volunteer', 'volunteerArea', 'pledgeGift', 'notes', 'mode', 'pageUrl'
+  'volunteer', 'volunteerArea', 'pledgeGift', 'notes', 'mode', 'pageUrl',
+  'giftRestricted'
 ];
 
 function doPost(e) {
@@ -114,7 +115,8 @@ function sendConfirmation_(p) {
     lines.push('  Volunteer:  ' + (p.volunteerArea || 'yes — thank you!'));
   }
   if (p.pledgeGift === 'Yes') {
-    lines.push('  Gift:       pledged — thank you');
+    lines.push('  Gift:       pledged — thank you' +
+      (p.giftRestricted === 'Yes' ? ' (restricted to Rev. Neville\'s pastor\'s gift)' : ''));
   }
 
   lines = lines.concat([
