@@ -44,6 +44,11 @@ var COMMITTEE_EMAIL = 'anniversary@yourchurch.org';  // gets a copy of every reg
 var REPLY_TO        = 'anniversary@yourchurch.org';  // where registrants' replies go
 // ------------------------------------------------------------------
 
+// Display name shown in the "From" line. The underlying email address is
+// always whichever Google account this script is deployed under — Apps
+// Script's MailApp cannot change that, only the name shown alongside it.
+var SENDER_NAME = 'Mount Moriah Baptist Church 45th Anniversary';
+
 var HEADERS = [
   'timestamp', 'registrant', 'phone', 'email',
   'registrationType', 'registrationQty',
@@ -140,6 +145,7 @@ function sendConfirmation_(p) {
 
   MailApp.sendEmail({
     to: p.email,
+    name: SENDER_NAME,
     replyTo: REPLY_TO,
     subject: 'You are registered — MMBC 45th Anniversary',
     body: lines.join('\n')
@@ -152,6 +158,7 @@ function notifyCommittee_(p) {
 
   MailApp.sendEmail({
     to: COMMITTEE_EMAIL,
+    name: SENDER_NAME,
     subject: 'New 45th registration: ' + (p.registrant || ''),
     body: HEADERS.map(function (k) { return k + ': ' + (p[k] || ''); }).join('\n')
   });
@@ -248,6 +255,7 @@ function sendPaymentConfirmations() {
 
     MailApp.sendEmail({
       to: email,
+      name: SENDER_NAME,
       replyTo: REPLY_TO,
       subject: 'Payment received — MMBC 45th Anniversary',
       body: [
