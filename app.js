@@ -372,9 +372,10 @@
   if (fineprint) {
     fineprint.innerHTML = IN_PERSON
       ? "No payment online. We&rsquo;ll email your total, then you pay in person at the church. " +
-        "Your information stays with the anniversary committee."
+        "Your information stays with the anniversary committee. " +
+        "<strong>All payments are non-refundable.</strong>"
       : "We&rsquo;ll follow up by email with your total and how to pay. Your information stays " +
-        "with the anniversary committee.";
+        "with the anniversary committee. <strong>All payments are non-refundable.</strong>";
   }
 
   // Registration closes on a fixed date — say so where people will see it.

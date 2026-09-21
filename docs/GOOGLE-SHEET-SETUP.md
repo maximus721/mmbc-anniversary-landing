@@ -133,6 +133,8 @@ function sendConfirmation_(p) {
     'or the Alexander Room on Sundays.',
     'We are not able to take payment online.',
     '',
+    'ALL PAYMENTS ARE NON-REFUNDABLE.',
+    '',
     'Please pay by Saturday, September 26 so we can finalise numbers.',
     '',
     'Your registration is not complete until payment is received.',
