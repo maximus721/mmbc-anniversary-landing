@@ -69,8 +69,6 @@ they're all in `config.js`:
 
 | Setting | Status |
 |---|---|
-| `pricing.saturday` | ✅ Done — from the Family Fun Day flyer |
-| `pricing.passport` | ✅ Done — from the Family Fun Day flyer |
 | `pricing.sunday.adult` | ❌ **Missing.** This price does not exist in any document yet |
 | `shirt.price` | ❌ **Missing** |
 | `shirt.bigAndTallUpcharge` | ❌ **Undecided** — the meeting floated $2 on 3XL/4XL but didn't decide. Set to `0` if you're not charging extra |
@@ -110,7 +108,7 @@ committee can open, sort and print. Full setup — including the script — is i
 Fields captured:
 
 - Name, email, phone
-- Which days they're attending (Saturday / Sunday / both / can't make it)
+- Whether they're attending Sunday's celebration, or can't make it (Family Fun Day is canceled)
 - Headcount split by adults, ages 13–18, under 12
 - T-shirt interest, with size and quantity per row
 - Volunteer interest, and which shifts

@@ -10,6 +10,23 @@ of these actually block that. Those are marked **BLOCKER**.
 
 ---
 
+## UPDATE — 2026-09-23: Family Fun Day canceled
+
+Saturday's Family Fun Day at Walker Park is **canceled**, per direct instruction. Live on the site:
+
+| Change | Status |
+|---|---|
+| A regretful cancellation notice replaces the old Family Fun Day section (same `#funday` anchor) | ✅ live |
+| Removed from: hero carousel, "The Weekend" day grid, tickets copy, flyer gallery, footer address block | ✅ live |
+| Saturday park-setup and park-cleanup volunteer shifts removed (form and the Volunteer page) | ✅ live |
+| Registration form's "which days" question collapsed to Sunday / can't make it — "Saturday only" and "Both days (Weekend Passport)" removed as choices | ✅ live |
+| `pricing.saturday` and `pricing.passport` removed from `config.js`; `pricing.sunday` ($65/$35/$35) left unchanged, per instruction to keep the dinner price the same | ✅ live |
+| Tickets section now shows a single Sunday ticket | ✅ live |
+
+**Flagging for the committee, not something I acted on:** a handful of people already registered for "Saturday only" or "Both days (Weekend Passport)" before the cancellation (check the Sheet for `registrationType`). Since the site had just added non-refundable-payments language, worth deciding explicitly whether those registrants get a partial adjustment for the canceled portion — that's a business decision, not something the site can resolve on its own.
+
+---
+
 ## UPDATE — 2026-09-07 committee notes (applied 2026-09-08)
 
 These came from `MMBC_45th_20260907_tech_summary.pdf` and are **live on the site**:

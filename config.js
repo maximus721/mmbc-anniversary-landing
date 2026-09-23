@@ -62,27 +62,17 @@ window.MMBC_CONFIG = {
      5. PRICING
      null = "To be announced" on the site. Numbers are whole dollars.
      ------------------------------------------------------------------- */
+  // Family Fun Day (Saturday) is canceled — see the notice on the site.
+  // Sunday Meal — the 1:00 PM Anniversary Celebration is now the only
+  // ticketed event. The flyer gives two tiers only: "Adults $65, children
+  // $35". The age boundary for "children" was never stated, so both the
+  // 13-18 and the under-12 tiers are set to $35 here. Change if a cutoff
+  // is decided. Left unchanged by the Family Fun Day cancellation.
   pricing: {
-    // Saturday Picnic — Family Fun Day at Walker Park
-    saturday: {
-      adult:  20,
-      youth:  10,     // ages 13-18
-      child:  0       // under 12 — free
-    },
-    // Sunday Meal — the 1:00 PM Anniversary Celebration
-    // The flyer gives two tiers only: "Adults $65, children $35". The age
-    // boundary for "children" was never stated, so both the 13-18 and the
-    // under-12 tiers are set to $35 here. Change if a cutoff is decided.
     sunday: {
       adult:  65,
       youth:  35,
       child:  35
-    },
-    // Weekend Passport — both days
-    passport: {
-      adult:  65,
-      youth:  40,     // under 18
-      child:  40
     }
   },
 

@@ -87,15 +87,6 @@
     return '<span class="price-chip"><b>' + money(value) + "</b> <span>" + label + "</span></span>";
   }
 
-  var fundayPrices = $("#fundayPrices");
-  if (fundayPrices) {
-    var sat = PRICING.saturday || {};
-    fundayPrices.innerHTML =
-      chip("Adults", sat.adult) +
-      chip("Ages 13–18", sat.youth) +
-      chip("Under 12", sat.child);
-  }
-
   var sundayPrices = $("#sundayPrices");
   if (sundayPrices) {
     var sun = PRICING.sunday || {};
@@ -118,30 +109,16 @@
 
   var ticketGrid = $("#ticketGrid");
   if (ticketGrid) {
-    var s = PRICING.saturday || {}, u = PRICING.sunday || {}, p = PRICING.passport || {};
+    var u = PRICING.sunday || {};
 
     var cards = [
       {
-        title: "Saturday Only",
-        when: "Family Fun Day · Oct 3",
-        rows: row("Adults", s.adult) + row("Ages 13–18", s.youth) + row("Children under 12", s.child),
-        note: "Picnic style at Walker Park, noon to four. Bring your food, chairs and blankets."
-      },
-      {
-        title: "Sunday Only",
+        title: "Sunday",
         when: "Anniversary Celebration · Oct 4",
         rows: known(u.adult)
           ? row("Adults", u.adult) + (known(u.youth) ? row("Children", u.youth) : "")
           : '<li><span>Ticket price</span><span class="ticket-price ticket-price--tbd">To be announced</span></li>',
         note: "The one o’clock celebration and meal downstairs, honoring Rev. Eugene L. Neville."
-      },
-      {
-        title: "Weekend Passport",
-        when: "Both days · Oct 3 &amp; 4",
-        rows: row("Adults", p.adult) + row("Under 18", p.youth),
-        note: "The whole weekend in one ticket — Saturday at the park and Sunday’s celebration.",
-        feature: true,
-        flag: "Best value"
       }
     ];
 
@@ -552,10 +529,7 @@
       var attending = getAttending();
       if (!attending || attending === "Cannot attend") { estimateEl.innerHTML = ""; return; }
 
-      var tier = attending.indexOf("Saturday") === 0 ? PRICING.saturday
-               : attending.indexOf("Sunday") === 0   ? PRICING.sunday
-               : PRICING.passport;
-      tier = tier || {};
+      var tier = PRICING.sunday || {};
 
       var adults = num("countAdults"), youth = num("countYouth"), children = num("countChildren");
       var lines = [], total = 0, incomplete = false;
@@ -574,20 +548,15 @@
 
       add("Adults", adults, tier.adult);
 
-      var isSaturday = attending.indexOf("Saturday") === 0;
-      var isSunday   = attending.indexOf("Sunday") === 0;
-
       // Sunday is priced "Adults / children" with no age split, so the two
       // child tiers collapse into one line rather than repeating "Children".
-      if (isSunday && tier.youth === tier.child) {
+      if (tier.youth === tier.child) {
         add("Children", youth + children, tier.youth);
       } else {
-        add(isSaturday ? "Ages 13–18" : "Under 18", youth, tier.youth);
+        add("Under 18", youth, tier.youth);
 
         if (children > 0) {
-          if (isSaturday) {
-            add("Children under 12", children, 0);
-          } else if (known(tier.child)) {
+          if (known(tier.child)) {
             add("Children under 12", children, tier.child);
           } else {
             incomplete = true;

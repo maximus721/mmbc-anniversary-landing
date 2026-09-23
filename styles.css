@@ -557,6 +557,9 @@ a:hover { color: var(--maroon-600); }
 }
 .notice p { margin: 0; font-size: .97rem; color: var(--maroon-900); }
 
+.notice--cancel { background: var(--cream-200); border-bottom: 1px solid var(--line); }
+.notice-badge--cancel { background: var(--maroon-800); color: var(--cream-100); }
+
 /* ---------- Day grid ---------- */
 .day-grid {
   list-style: none; margin: 0; padding: 0;
@@ -1074,7 +1077,7 @@ textarea { resize: vertical; min-height: 84px; }
 }
 .footer-grid {
   display: grid; gap: 2rem;
-  grid-template-columns: 1.4fr repeat(3, 1fr);
+  grid-template-columns: 1.4fr repeat(2, 1fr);
   padding-bottom: 2.5rem;
 }
 .footer-45 {
