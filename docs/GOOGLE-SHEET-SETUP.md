@@ -121,7 +121,7 @@ function sendConfirmation_(p) {
   }
   if (p.pledgeGift === 'Yes') {
     lines.push('  Gift:       pledged — thank you' +
-      (p.giftRestricted === 'Yes' ? ' (restricted to Rev. Neville\'s pastor\'s gift)' : ''));
+      (p.giftRestricted === 'Yes' ? ' (restricted to the Rev. Eugene L. Neville Legacy Gift)' : ''));
   }
 
   lines = lines.concat([
@@ -129,13 +129,15 @@ function sendConfirmation_(p) {
     '  AMOUNT DUE: ' + due,
     '',
     'HOW TO PAY',
-    'Payment is in person at the church — cash or check. Please see Gwen Hickman,',
-    'or the Alexander Room on Sundays.',
+    'Payment is in person at the church — cash, check or money order. Please see Gwen Hickman,',
+    'bring payment to the church on Thursday, October 1 at 6:00 PM, or the Alexander Room on Sundays.',
     'We are not able to take payment online.',
     '',
     'ALL PAYMENTS ARE NON-REFUNDABLE.',
+    '(Family Fun Day tickets are the one exception — contact Gwen Hickman for a refund',
+    'on that portion, since that event was canceled.)',
     '',
-    'Please pay by Saturday, September 26 so we can finalise numbers.',
+    'Please pay by Thursday, October 1 so we can finalise numbers.',
     '',
     'Your registration is not complete until payment is received.',
     '',

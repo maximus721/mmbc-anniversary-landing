@@ -20,8 +20,9 @@ window.MMBC_CONFIG = {
 
   registrationOpensLabel: "Tuesday, September 8",
 
-  // CONFIRMED 2026-09-07: registration closes Saturday, September 26.
-  registrationDeadline: "Saturday, September 26, 2026",
+  // UPDATED 2026-09-30 per committee email: registration now closes
+  // Wednesday, September 30 (was Saturday, September 26).
+  registrationDeadline: "Wednesday, September 30, 2026",
 
   /* -------------------------------------------------------------------
      2. WHERE THE FORM SENDS DATA
@@ -89,7 +90,9 @@ window.MMBC_CONFIG = {
   },
 
   /* -------------------------------------------------------------------
-     7. COUNTDOWN TARGET — Family Fun Day kickoff (Eastern time)
+     7. COUNTDOWN TARGET — Sunday morning worship kickoff (Eastern time)
+     Was Family Fun Day's Saturday noon start; retargeted to Sunday 10:00 AM
+     now that Family Fun Day is canceled and it's the first event left.
      ------------------------------------------------------------------- */
-  countdownTarget: "2026-10-03T12:00:00-04:00"
+  countdownTarget: "2026-10-04T10:00:00-04:00"
 };

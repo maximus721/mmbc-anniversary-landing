@@ -197,7 +197,7 @@
   var giveNote = $("#giveNote");
   if (giveNote) {
     giveNote.innerHTML = IN_PERSON
-      ? "Gifts are received in person at the church &mdash; cash or check. Tell us on the form and we&rsquo;ll look out for you."
+      ? "Gifts are received in person at the church, or through Ms. Gwen Hickman &mdash; cash, check or money order. Tell us on the form and we&rsquo;ll look out for you."
       : "You can also give in person &mdash; cash or check &mdash; at the church.";
   }
 
@@ -348,8 +348,9 @@
   var fineprint = $("#formFineprint");
   if (fineprint) {
     fineprint.innerHTML = IN_PERSON
-      ? "No payment online. We&rsquo;ll email your total, then you pay in person at the church. " +
-        "Your information stays with the anniversary committee. " +
+      ? "No payment online. We&rsquo;ll email your total, then you pay in person at the church " +
+        "&mdash; cash, check or money order. Bring payment Thursday, October 1 at 6:00 PM, or to " +
+        "the Alexander Room on Sundays. Your information stays with the anniversary committee. " +
         "<strong>All payments are non-refundable.</strong>"
       : "We&rsquo;ll follow up by email with your total and how to pay. Your information stays " +
         "with the anniversary committee. <strong>All payments are non-refundable.</strong>";

@@ -10,6 +10,27 @@ of these actually block that. Those are marked **BLOCKER**.
 
 ---
 
+## UPDATE — 2026-09-30: committee email applied — TIME-SENSITIVE
+
+From the committee's stakeholder email sent today. Two items below are urgent: the registration
+deadline is **today**, and the decorating/payment/pickup event is **tomorrow evening**.
+
+| Change | Status |
+|---|---|
+| Registration deadline moved **Sept 26 → Wednesday, September 30 (today)** | ✅ live — `config.js` and the "Register by" banner |
+| Celebration Preparation (decorating) moved **Fri, Sept 25 → Thursday, October 1 at 6:00 PM** | ✅ live — day grid, Volunteer page, registration form checkbox |
+| Payment now accepted **cash, check, or money order**, specifically at the church **Thursday, Oct 1, 6:00 PM** (plus existing options: Gwen Hickman, Alexander Room Sundays) | ✅ live — registration fine print and confirmation email |
+| Family Fun Day refund path: contact **Ms. Gwen Hickman** to request one | ✅ live — added to the cancellation notice and the confirmation email's non-refundable line, as an explicit exception |
+| T-shirt pickup: **Thursday, Oct 1, 6:00 PM** at the church | ✅ live — Store section |
+| Gift renamed to the **"Rev. Eugene L. Neville Legacy Gift"**, contributions to Ms. Gwen Hickman | ✅ live — Give section, registration form's gift-restriction checkbox, confirmation email |
+| Countdown timer retargeted from the old Family Fun Day noon start (now meaningless) to Sunday's 10:00 AM service | ✅ live |
+
+**Deliberately left off the site** (read as internal church-family asks, not registration/ticketing content, and there's no natural section for them): the request for photos/videos of church history, names of founding/deceased members to remember, and "share your love" video submissions. All of those point to `shaynah215@gmail.com` directly in the email. Say the word if you want a section built for these.
+
+**Needs your action, same pattern as every email-wording change:** the confirmation email text changed (payment date/method, the Family Fun Day refund exception, the Legacy Gift name) — this requires pasting the updated script into Apps Script and redeploying.
+
+---
+
 ## UPDATE — 2026-09-23: Family Fun Day canceled
 
 Saturday's Family Fun Day at Walker Park is **canceled**, per direct instruction. Live on the site:
