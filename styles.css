@@ -1067,6 +1067,28 @@ textarea { resize: vertical; min-height: 84px; }
 
 .also-flyer { margin: -.4rem 0 1.4rem; }
 
+/* ---------- Memories / videos ---------- */
+.video-grid {
+  display: grid; gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  max-width: 980px;
+}
+.video-card {
+  margin: 0;
+  border-radius: var(--radius); overflow: hidden;
+  border: 1px solid var(--line-gold);
+  box-shadow: var(--shadow-md);
+  background: var(--cream-100);
+}
+.video-card video {
+  display: block; width: 100%; aspect-ratio: 16 / 9;
+  background: #000;
+}
+.video-card figcaption {
+  padding: .8rem 1rem;
+  font-weight: 600; color: var(--maroon-900);
+}
+
 /* ---------- Footer ---------- */
 .site-footer {
   background: linear-gradient(180deg, var(--maroon-900), #2C040A);

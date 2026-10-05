@@ -58,7 +58,7 @@
 
       if (diff <= 0) {
         countdown.className = "countdown countdown--done";
-        countdown.textContent = "The weekend is here — come celebrate with us.";
+        countdown.textContent = "Thank you for celebrating 45 years with us.";
         return;
       }
       var s = Math.floor(diff / 1000);
